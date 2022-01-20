@@ -30,7 +30,7 @@ const Social = ({ direction }) => {
   return (
     <Grid container direction={direction || "row"} spacing={1}>
       {socialItems.map((item) => (
-        <Grow in={shouldShow}>
+        <Grow key={item.title} in={shouldShow}>
           <Grid item>
             <Link href={item.url} title={item.title} target="_blank">
               <IconButton>

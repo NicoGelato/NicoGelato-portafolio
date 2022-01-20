@@ -5,8 +5,8 @@ import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
 import Grow from "@material-ui/core/Grow";
 import { Hidden } from "@material-ui/core";
 import { StaticImage } from "gatsby-plugin-image";
@@ -15,8 +15,6 @@ import { DiHtml5 } from "@react-icons/all-files/di/DiHtml5";
 import { DiCss3 } from "@react-icons/all-files/di/DiCss3";
 import { DiJavascript1 } from "@react-icons/all-files/di/DiJavascript1";
 import { DiReact } from "@react-icons/all-files/di/DiReact";
-// import { SiBootstrap } from "@react-icons/all-files/si/SiBootstrap";
-
 // Fondo
 import backgroundImage from "../images/portfolioCodingImage_2.jpeg";
 // Componentes locales
@@ -26,6 +24,7 @@ import Social from "./Social";
 const useStyles = makeStyles((theme) => ({
   section: {
     height: "85vh",
+    position: "relative"
   },
   container: {
     height: "100%",
@@ -53,10 +52,10 @@ const useStyles = makeStyles((theme) => ({
 
 // Items Frontend
 const TechnologyItems = [
-  { icon: <DiHtml5 title="HTML 5" /> },
-  { icon: <DiCss3 title="CSS 3" /> },
-  { icon: <DiJavascript1 title="JavaScript" /> },
-  { icon: <DiReact title="React" /> },
+  { icon: <DiHtml5 key="HTML" title="HTML 5" /> },
+  { icon: <DiCss3 key="CSS" title="CSS 3" /> },
+  { icon: <DiJavascript1 key="JavaScript" title="JavaScript" /> },
+  { icon: <DiReact key="React" title="React" /> },
 ];
 
 const HeroSection = () => {
@@ -67,17 +66,15 @@ const HeroSection = () => {
   useEffect(() => {
     setShouldShow(true);
   }, []);
-    
-    
 
   return (
     <>
-      <StaticImage
-        className={styles.heroImage}
-        src="../images/portfolioCodingImage_2.jpeg"
-      />
-      <Paper className={styles.section}>
-        {/* Revisar esta parte porque no me convence mucho la imagen*/}
+      <Paper className={styles.section} id="Sobremí">
+        <StaticImage
+          className={styles.heroImage}
+          src="../images/portfolioCodingImage_2.jpeg"
+          alt="Imagen de fondo: netbook con codigo"
+        />
         <Container className={styles.container} maxWidth="md">
           <Grid
             container
@@ -115,7 +112,7 @@ const HeroSection = () => {
             </Grow>
             <Hidden xsDown>
               <Grid item>
-                <Social direction="column" />              
+                <Social direction="column" />
               </Grid>
             </Hidden>
             <Hidden smUp>

@@ -1,15 +1,21 @@
-import React, {useState} from "react";
-import { Container, IconButton, Link, SwipeableDrawer, Divider, List, ListItem } from "@material-ui/core";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import ToolBar from "@material-ui/core/ToolBar";
 import Avatar from "@material-ui/core/Avatar";
-// Revisar componente obsoleto Hidden en la v5 de MUI 
+import {
+  Container,
+  IconButton,
+  Link,
+  SwipeableDrawer,
+  Divider,
+  List,
+  ListItem,
+} from "@material-ui/core";
+// Revisar componente obsoleto Hidden en la v5 de MUI
 import Hidden from "@material-ui/core/Hidden";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-
-
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -17,21 +23,18 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     marginRight: "auto",
-      color: "rgb(200,200,200)",
-    
+    color: "rgb(200,200,200)",
   },
 }));
 
 const navegationLinks = [
-  { name: "Proyectos", href: "" },
-  { name: "CV", href: "" },
-  { name: "Sobre mí", href: "" },
+  { name: "Proyectos", href: "#Proyectos" },
+  { name: "CV", href: "#CV" },
+  { name: "Sobre mí", href: "#Sobremí" },
 ];
 
 const Header = () => {
-
-    const [open, setOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
 
   const styles = useStyles();
   return (
@@ -47,6 +50,7 @@ const Header = () => {
                 color="textPrimary"
                 underline="none"
                 href={link.href}
+                key={link.href}
               >
                 {link.name}
               </Link>
@@ -73,7 +77,7 @@ const Header = () => {
         <Divider />
         <List>
           {navegationLinks.map((link) => (
-            <ListItem>
+            <ListItem key={link.name}>
               <Link
                 className={styles.link}
                 variant="button"
