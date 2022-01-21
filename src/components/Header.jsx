@@ -17,6 +17,7 @@ import Hidden from "@material-ui/core/Hidden";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
+
 const useStyles = makeStyles((theme) => ({
   link: {
     marginRight: 20,
@@ -24,13 +25,18 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     marginRight: "auto",
     color: "rgb(200,200,200)",
+    border: "0.5px solid #2F2997",
   },
 }));
 
 const navegationLinks = [
   { name: "Proyectos", href: "#Proyectos" },
-  { name: "CV", href: "#CV" },
-  { name: "Sobre mí", href: "#Sobremí" },
+  {
+    name: "CV",
+    href: "/NicolasGelatoCV.pdf",
+    target: "_blank",
+  },
+  // { name: "Sobre mí", href: "#Sobremí" },
 ];
 
 const Header = () => {
@@ -51,6 +57,7 @@ const Header = () => {
                 underline="none"
                 href={link.href}
                 key={link.href}
+                target={link.target}
               >
                 {link.name}
               </Link>
@@ -84,6 +91,7 @@ const Header = () => {
                 color="textPrimary"
                 underline="none"
                 href={link.href}
+                target={link.target}
               >
                 {link.name}
               </Link>
