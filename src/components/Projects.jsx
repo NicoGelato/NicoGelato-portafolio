@@ -68,7 +68,7 @@ const Project = ({
       <Card className={styles.card}>
         <div>
           <CardContent>
-            {statusOfProject === "En Proceso" && (
+            {statusOfProject === "Construyendo" && (
               <Typography
                 className={styles.statusOfProject}
                 variant="subtitle2"
@@ -123,7 +123,7 @@ const projectsData = [
     title: "Ecommerce Indumentarias Leeds",
     description:
       "Ecommerce para venta de ropa, desarrollado utilizando React, Bootstrap y Firebase como plataforma de base de datos",
-    statusOfProject: "En Proceso",
+    statusOfProject: "Construyendo",
     imageUrl: `${leedsPortada}`,
     imageAlt: "Ecommerce de Indumentarias Leeds",
     tags: ["React.js", "Css", "Bootstrap", "NodeJs", "Firebase 9"],
