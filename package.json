@@ -1,11 +1,13 @@
 {
+  "homepage": "https://nicogelato.github.io/",
   "name": "nicolas-gelato-portafolio",
   "version": "1.0.0",
   "private": true,
   "description": "NicolasGelato Portafolio",
   "author": "NicoGelato",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "material-ui"
   ],
   "scripts": {
     "develop": "gatsby develop",
