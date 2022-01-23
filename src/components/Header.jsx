@@ -17,7 +17,6 @@ import Hidden from "@material-ui/core/Hidden";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
-
 const useStyles = makeStyles((theme) => ({
   link: {
     marginRight: 20,

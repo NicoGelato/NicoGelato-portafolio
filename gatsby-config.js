@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/nicogelato.github.io", 
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "NicolasGelato Portafolio",
