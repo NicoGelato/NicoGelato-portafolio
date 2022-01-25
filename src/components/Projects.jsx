@@ -1,40 +1,43 @@
 import React from "react";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import OpenInNewIcon from "@material-ui/icons/OpenInNew";
-import SettingsIcon from "@material-ui/icons/Settings";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import { Card, CardMedia, CardContent, CardActions } from "@material-ui/core";
-import { IconButton } from "@material-ui/core";
-import Chip from "@material-ui/core/Chip";
-import Hidden from "@material-ui/core/Hidden";
-// Estilos
-import { makeStyles } from "@material-ui/core";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import SettingsIcon from "@mui/icons-material/Settings";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { Card, CardMedia, CardContent, CardActions } from "@mui/material";
+import { IconButton } from "@mui/material";
+import Chip from "@mui/material/Chip";
+import Hidden from "@mui/material/Hidden";
+import makeStyles from '@mui/styles/makeStyles';
 // Imagen Proyecto
 import leedsPortada from "../images/leedsPortada.png";
 
-const useStyles = makeStyles((theme) => ({
-  card: {
-    display: "flex",
-    marginLeft: "auto",
+const useStyles = makeStyles(
+  {
+    card: {
+      display: "flex",
+      marginLeft: "auto",
+      marginBottom: 20,
+    },
+    cardMedia: {
+      width: "75%",
+      opacity: "0.7",
+    },
+    link: {
+      marginRight: "auto",
+    },
+    tag: {
+      marginRight: 5,
+      marginBottom: 5,
+    },
+    statusOfProject: {
+      color: "#06C400",
+    },
   },
-  cardMedia: {
-    width: "75%",
-    opacity: "0.7",
-  },
-  link: {
-    marginRight: "auto",
-  },
-  tag: {
-    marginRight: 5,
-    marginBottom: 5,
-  },
-  statusOfProject: {
-    color: "#06C400",
-  },
-}));
+  { index: 1 }
+);
 
 const TagsContainer = ({ tags }) => {
   const styles = useStyles();
@@ -99,18 +102,18 @@ const Project = ({
                   href={linkItem.href}
                   title={linkItem.title}
                   target="_blank"
-                >
+                  size="large">
                   {" "}
                   <linkItem.icon />
                 </IconButton>
               ))}
             </div>
-            <Hidden smDown>
+            <Hidden mdDown>
               <TagsContainer tags={tags} />
             </Hidden>
           </CardActions>
         </div>
-        <Hidden xsDown>
+        <Hidden smDown>
           <CardMedia className={styles.cardMedia} image={imageUrl} alt={imageAlt}></CardMedia>
         </Hidden>
       </Card>

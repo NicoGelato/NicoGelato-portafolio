@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import  GitHubIcon  from "@material-ui/icons/GitHub";
-import  LinkedInIcon  from "@material-ui/icons/LinkedIn";
-import { Grid } from "@material-ui/core";
-import { IconButton } from "@material-ui/core";
-import { Link } from "@material-ui/core";
-import { Grow } from "@material-ui/core";
+import  GitHubIcon  from "@mui/icons-material/GitHub";
+import  LinkedInIcon  from "@mui/icons-material/LinkedIn";
+import { Grid } from "@mui/material";
+import { IconButton } from "@mui/material";
+import { Link } from "@mui/material";
+import { Grow } from "@mui/material";
 
 
 const socialItems = [
@@ -33,7 +33,7 @@ const Social = ({ direction }) => {
         <Grow key={item.title} in={shouldShow}>
           <Grid item>
             <Link href={item.url} title={item.title} target="_blank">
-              <IconButton>
+              <IconButton size="large">
                 <item.icon />
               </IconButton>
             </Link>

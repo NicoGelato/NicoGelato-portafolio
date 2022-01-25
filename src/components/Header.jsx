@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core";
-import AppBar from "@material-ui/core/AppBar";
-import ToolBar from "@material-ui/core/ToolBar";
-import Avatar from "@material-ui/core/Avatar";
+import makeStyles from '@mui/styles/makeStyles';
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Avatar from "@mui/material/Avatar";
 import {
   Container,
   IconButton,
@@ -11,22 +11,22 @@ import {
   Divider,
   List,
   ListItem,
-} from "@material-ui/core";
+} from "@mui/material";
 // Revisar componente obsoleto Hidden en la v5 de MUI
-import Hidden from "@material-ui/core/Hidden";
-import MenuIcon from "@material-ui/icons/Menu";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import Hidden from "@mui/material/Hidden";
+import MenuIcon from "@mui/icons-material/Menu";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   link: {
     marginRight: 20,
   },
   avatar: {
     marginRight: "auto",
     color: "rgb(200,200,200)",
-    border: "0.5px solid #2F2997",
+    border: "1px solid #2F2997",
   },
-}));
+}, {index:1});
 
 const navegationLinks = [
   { name: "Proyectos", href: "#Proyectos" },
@@ -34,9 +34,7 @@ const navegationLinks = [
     name: "CV",
     href: "/NicolasGelatoCV.pdf",
     target: "_blank",
-  },
-  // { name: "Sobre mí", href: "#Sobremí" },
-];
+  }];
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -45,9 +43,9 @@ const Header = () => {
   return (
     <AppBar position="sticky" color="default">
       <Container maxWidth="md">
-        <ToolBar disableGutters>
+        <Toolbar disableGutters>
           <Avatar className={styles.avatar}>NG</Avatar>
-          <Hidden xsDown>
+          <Hidden smDown>
             {navegationLinks.map((link) => (
               <Link
                 className={styles.link}
@@ -63,11 +61,11 @@ const Header = () => {
             ))}
           </Hidden>
           <Hidden smUp>
-            <IconButton>
+            <IconButton size="large">
               <MenuIcon onClick={() => setOpen(true)} />
             </IconButton>
           </Hidden>
-        </ToolBar>
+        </Toolbar>
       </Container>
       <SwipeableDrawer
         anchor="right"
@@ -76,7 +74,7 @@ const Header = () => {
         onClose={() => setOpen(false)}
       >
         <div>
-          <IconButton>
+          <IconButton size="large">
             <ChevronRightIcon onClick={() => setOpen(false)} />
           </IconButton>
         </div>
