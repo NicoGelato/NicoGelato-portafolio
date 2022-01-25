@@ -1,7 +1,7 @@
 module.exports = {
-  pathPrefix: "/nicogelato.github.io",
+  pathPrefix: "/NicoGelato-portafolio",
   siteMetadata: {
-    siteUrl: "https://www.nicogelato.github.io",
+    siteUrl: "https://www.nicogelato.gatsbyjs.io",
     title: "NicolasGelato Portafolio",
   },
   plugins: [
