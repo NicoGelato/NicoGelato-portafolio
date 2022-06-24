@@ -11,8 +11,9 @@ import { IconButton } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Hidden from "@mui/material/Hidden";
 import makeStyles from '@mui/styles/makeStyles';
-// Imagen Proyecto
+// Imagenes Proyectos
 import leedsPortada from "../images/leedsPortada.png";
+import otraCosaPortada from "../images/otraCosaPortada.jpg";
 
 const useStyles = makeStyles(
   {
@@ -139,6 +140,27 @@ const projectsData = [
       {
         icon: OpenInNewIcon,
         href: "https://leedsindumentaria.netlify.app/",
+        title: "Ir a la página",
+      },
+    ],
+  },
+    {
+    title: "Pagina de 'Otra Cosa'",
+    description:
+      "Pagina de la banda de rock 'Otra Cosa', desarrollado utilizando React, GatsbyJS, Material ui y conexion con Googles API's",
+    statusOfProject: "Construyendo",
+    imageUrl: `${otraCosaPortada}`,
+    imageAlt: "Pagina de la banda de rock Otra Cosa",
+    tags: ["React.js", "Gatsby.js", "Material UI", "NodeJs", "Google API's"],
+    links: [
+      {
+        icon: GitHubIcon,
+        href: "https://github.com/NicoGelato/otraCosa",
+        title: "Ver código",
+      },
+      {
+        icon: OpenInNewIcon,
+        href: "https://otracosa.gatsbyjs.io/",
         title: "Ir a la página",
       },
     ],
