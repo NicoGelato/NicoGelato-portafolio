@@ -10,10 +10,11 @@ import { Card, CardMedia, CardContent, CardActions } from "@mui/material";
 import { IconButton } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Hidden from "@mui/material/Hidden";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 // Imagenes Proyectos
 import leedsPortada from "../images/leedsPortada.png";
 import otraCosaPortada from "../images/otraCosaPortada.jpg";
+import plakatPortada from "../images/plakatPortada.jpg";
 
 const useStyles = makeStyles(
   {
@@ -30,8 +31,8 @@ const useStyles = makeStyles(
       marginRight: "auto",
     },
     tag: {
-      marginRight: 5,
-      marginBottom: 5,
+      // marginRight: 5,
+      // marginBottom: 5,
     },
     statusOfProject: {
       color: "#06C400",
@@ -44,16 +45,18 @@ const TagsContainer = ({ tags }) => {
   const styles = useStyles();
 
   return (
-    <>
+    <Grid container spacing={2}>
       {tags.map((tag) => (
-        <Chip
-          className={styles.tag}
-          label={tag}
-          variant="outlined"
-          key={tag}
-        ></Chip>
+        <Grid item key={tag}>
+          <Chip
+            className={styles.tag}
+            label={tag}
+            variant="outlined"
+            // key={tag}
+          ></Chip>
+        </Grid>
       ))}
-    </>
+    </Grid>
   );
 };
 
@@ -70,7 +73,7 @@ const Project = ({
   return (
     <Grid item>
       <Card className={styles.card}>
-        <div>
+        <Grid md={10}>
           <CardContent>
             {statusOfProject === "Construyendo" && (
               <Typography
@@ -103,7 +106,8 @@ const Project = ({
                   href={linkItem.href}
                   title={linkItem.title}
                   target="_blank"
-                  size="large">
+                  size="large"
+                >
                   {" "}
                   <linkItem.icon />
                 </IconButton>
@@ -113,9 +117,14 @@ const Project = ({
               <TagsContainer tags={tags} />
             </Hidden>
           </CardActions>
-        </div>
+        </Grid>
+
         <Hidden smDown>
-          <CardMedia className={styles.cardMedia} image={imageUrl} alt={imageAlt}></CardMedia>
+          <CardMedia
+            className={styles.cardMedia}
+            image={imageUrl}
+            alt={imageAlt}
+          ></CardMedia>
         </Hidden>
       </Card>
     </Grid>
@@ -124,7 +133,7 @@ const Project = ({
 
 const projectsData = [
   {
-    title: "Ecommerce Indumentarias Leeds",
+    title: "Ecommerce: Indumentarias Leeds",
     description:
       "Ecommerce para venta de ropa, desarrollado utilizando React, Bootstrap y Firebase como plataforma de base de datos",
     statusOfProject: "Construyendo",
@@ -144,10 +153,10 @@ const projectsData = [
       },
     ],
   },
-    {
-    title: "Pagina de 'Otra Cosa'",
+  {
+    title: "Página web: Otra Cosa",
     description:
-      "Pagina de la banda de rock 'Otra Cosa', desarrollado utilizando React, GatsbyJS, Material ui y conexion con Googles API's",
+      "Pagina de la banda de rock 'Otra Cosa', desarrollada utilizando React, GatsbyJS, Material ui y conexion con Google API's",
     statusOfProject: "Construyendo",
     imageUrl: `${otraCosaPortada}`,
     imageAlt: "Pagina de la banda de rock Otra Cosa",
@@ -165,6 +174,22 @@ const projectsData = [
       },
     ],
   },
+  {
+    title: "Mantenimiento de página web: Plakat",
+    description:
+      "Mantenimiento de la página web de 'Plakat Gráfica', desarrollada, por terceros, en Wordpress",
+    statusOfProject: "Mantenimiento",
+    imageUrl: `${plakatPortada}`,
+    imageAlt: "Pagina de Plakat, empresa de ploteos y carteleria",
+    tags: ["Wordpress"],
+    links: [
+      {
+        icon: OpenInNewIcon,
+        href: "https://www.plakatgrafica.com/",
+        title: "Ir a la página",
+      },
+    ],
+  },
 ];
 
 const Projects = () => {
@@ -176,7 +201,7 @@ const Projects = () => {
         </Box>
         <Grid container direction="column" spacing={4}>
           {projectsData.map((data) => (
-            <Project {...data} key={data.title }/>
+            <Project {...data} key={data.title} />
           ))}
         </Grid>
       </Container>
