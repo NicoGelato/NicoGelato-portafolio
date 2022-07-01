@@ -132,27 +132,7 @@ const Project = ({
 };
 
 const projectsData = [
-  {
-    title: "Ecommerce: Indumentarias Leeds",
-    description:
-      "Ecommerce para venta de ropa, desarrollado utilizando React, Bootstrap y Firebase como plataforma de base de datos",
-    statusOfProject: "Construyendo",
-    imageUrl: `${leedsPortada}`,
-    imageAlt: "Ecommerce de Indumentarias Leeds",
-    tags: ["React.js", "Css", "Bootstrap", "NodeJs", "Firebase 9"],
-    links: [
-      {
-        icon: GitHubIcon,
-        href: "https://github.com/NicoGelato/coderHouse-React-Gelato",
-        title: "Ver código",
-      },
-      {
-        icon: OpenInNewIcon,
-        href: "https://leedsindumentaria.netlify.app/",
-        title: "Ir a la página",
-      },
-    ],
-  },
+
   {
     title: "Página web: Otra Cosa",
     description:
@@ -170,6 +150,27 @@ const projectsData = [
       {
         icon: OpenInNewIcon,
         href: "https://otracosa.gatsbyjs.io/",
+        title: "Ir a la página",
+      },
+    ],
+  },  
+  {
+    title: "Ecommerce: Indumentarias Leeds",
+    description:
+      "Ecommerce para venta de ropa, desarrollado utilizando React, Bootstrap y Firebase como plataforma de base de datos",
+    statusOfProject: "Construyendo",
+    imageUrl: `${leedsPortada}`,
+    imageAlt: "Ecommerce de Indumentarias Leeds",
+    tags: ["React.js", "Css", "Bootstrap", "NodeJs", "Firebase 9"],
+    links: [
+      {
+        icon: GitHubIcon,
+        href: "https://github.com/NicoGelato/coderHouse-React-Gelato",
+        title: "Ver código",
+      },
+      {
+        icon: OpenInNewIcon,
+        href: "https://leedsindumentaria.netlify.app/",
         title: "Ir a la página",
       },
     ],
